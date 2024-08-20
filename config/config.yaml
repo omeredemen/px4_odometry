@@ -1,0 +1,6 @@
+px4_odom_node:
+  ros__parameters:
+    sensor_debug: true
+    broadcast_tf: true
+    vio_topic: "/ov_msckf/odomimu"
+    px4_pose_topic: "/px4_odom/pose"
