@@ -23,7 +23,7 @@ def setup_realsense_config():
     return config_params
 
 def generate_launch_description():
-    rviz_enable = DeclareLaunchArgument(name='ov_enable', default_value='true')
+    ov_enable = DeclareLaunchArgument(name='ov_enable', default_value='true')
     ov_config_path = DeclareLaunchArgument(name='ov_config_path', default_value='')
     rviz_enable = DeclareLaunchArgument(name='rviz_enable', default_value='true')
     realsense_package = get_package_share_directory('realsense2_camera')
@@ -47,6 +47,7 @@ def generate_launch_description():
         condition=IfCondition(LaunchConfiguration('ov_enable'))
     )
     return LaunchDescription([
+        ov_enable,
         ov_config_path,
         rviz_enable,
         rs_launch,
