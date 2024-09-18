@@ -1,9 +1,9 @@
 camera_name: d456
-camera_namespace: ''
+camera_namespace: 'd456'
 enable_infra1: 'true'
 enable_infra2: 'true'
-depth_module.infra_profile: 640x480x30
-depth_module.depth_profile: 640x480x30
+depth_module.infra_profile: 848x480x30
+depth_module.depth_profile: 848x480x30
 depth_module.laser_power: 0.0
 pointcloud.enable: 'true'
 enable_gyro: 'true'
@@ -42,7 +42,7 @@ depth_module.gain.1: '16'  # Depth module first gain value. Used for hdr_merge f
 depth_module.exposure.2: '1'  # Depth module second exposure value. Used for hdr_merge filter
 depth_module.gain.2: '16'  # Depth module second gain value. Used for hdr_merge filter
 enable_rgbd: 'false'  # enable rgbd topic
-clip_distance: '-2.'  # clipping distance
+clip_distance: '4.'  # clipping distance
 angular_velocity_cov: '0.01'  # Angular velocity covariance
 linear_accel_cov: '0.01'  # Linear acceleration covariance
 diagnostics_period: '0.0'  # Rate of publishing diagnostics. 0=Disabled
@@ -55,8 +55,8 @@ pointcloud.allow_no_texture_points: 'false'  # allow points without texture
 align_depth.enable: 'false'  # enable align depth filter
 colorizer.enable: 'false'  # enable colorizer filter
 decimation_filter.enable: 'false'  # enable decimation filter
-spatial_filter.enable: 'false'  # enable spatial filter
-temporal_filter.enable: 'false'  # enable temporal filter
+spatial_filter.enable: 'true'  # enable spatial filter
+temporal_filter.enable: 'true'  # enable temporal filter
 disparity_filter.enable: 'false'  # enable disparity filter
 hole_filling_filter.enable: 'false'  # enable hole filling filter
 hdr_merge.enable: 'false'  # HDR merge filter enablement flag
