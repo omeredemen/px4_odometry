@@ -13,6 +13,12 @@ def generate_launch_description():
         DeclareLaunchArgument('frame_id', default_value='global'),
         DeclareLaunchArgument('base_frame_id', default_value='base_link'),
         DeclareLaunchArgument('pcl_topic', default_value='/d456/d456/depth/color/points'),
+        DeclareLaunchArgument('resolution', default_value='0.15'),
+        DeclareLaunchArgument('height_map', default_value='False'),
+        DeclareLaunchArgument('colored_map', default_value='False'),
+        DeclareLaunchArgument('compress_map', default_value='False'),
+        DeclareLaunchArgument('incremental_2D_projection', default_value='False'),
+        DeclareLaunchArgument('sensor_model/max_range', default_value='5.0'),
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource([os.path.join(
@@ -20,7 +26,13 @@ def generate_launch_description():
             ]),
             launch_arguments={'frame_id': LaunchConfiguration('frame_id'),
                             'base_frame_id': LaunchConfiguration('base_frame_id'),
-                            'input_cloud_topic': LaunchConfiguration('pcl_topic')}.items()
+                            'input_cloud_topic': LaunchConfiguration('pcl_topic'),
+                            'resolution': LaunchConfiguration('resolution'),
+                            'height_map': LaunchConfiguration('height_map'),
+                            'colored_map': LaunchConfiguration('colored_map'),
+                            'compress_map': LaunchConfiguration('compress_map'),
+                            'incremental_2D_projection': LaunchConfiguration('incremental_2D_projection'),
+                            'sensor_model/max_range': LaunchConfiguration('sensor_model/max_range')}.items()
         ),
 
         Node(
